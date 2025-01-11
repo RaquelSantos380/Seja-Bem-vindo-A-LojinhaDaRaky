@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap">
     <style>
         body {
-            font-family: 'Raleway', sans-serif; /* Fonte mais feminina e elegante */
-            background-color: #fce4ec; /* Cor de fundo suave */
-            color: #083170; /* Cor do texto */
-            margin: 0; /* Remove margens padrão */
-            padding: 0; /* Remove preenchimento padrão */
-            line-height: 1.5; /* Altura da linha */
-            font-weight: 500; /* Peso de fonte mais leve, mas ainda legível */
+            font-family: 'Raleway', sans-serif;
+            background-color: #fce4ec;
+            color: #083170;
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.5; 
+            font-weight: 500; 
+            overflow: hidden; /* Impede a rolagem da página */
         }
 
         h1 {
@@ -43,10 +44,12 @@
         .container {
             max-width: 800px;
             margin: auto;
-            padding: 40px; /* Aumentando o padding para mais espaço */
+            padding: 40px; 
             background: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: scale(1.2); /* Aumenta o tamanho da div */
+            transform-origin: center; /* Mantém o centro da div no mesmo lugar */
         }
         .profile-img {
             display: block;
@@ -59,7 +62,7 @@
         .link-button {
             display: block;
             margin: 15px 0;
-            padding: 15px; /* Aumentando o padding do botão */
+            padding: 15px; 
             background: #f48fb1;
             color: white;
             border: none;
@@ -73,7 +76,7 @@
         }
         .footer {
             text-align: center;
-            margin-top: 300px; /* Adicionando espaço acima do rodapé */
+            margin-top: 300px; 
             font-size: 0.9rem;
             color: #555;
         }
