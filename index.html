@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta name="description" content="Olá, sou a Raky! Não perca a oportunidade de conhecer:"/>
-    <meta property="og:title" content="lojinhadarakyoficial | Instagram, TikTok | Linktree"/>
+    <meta property="og:title" content="lojinhadarakyoficial |
     <meta property="og:description" content="Olá, sou a Raky! Não perca a oportunidade de conhecer:"/>
     <meta property="og:url" content="https://linktr.ee/lojinhadarakyoficial"/>
     <meta property="og:image" content="https://linktr.ee/og/image/lojinhadarakyoficial.jpg"/>
@@ -22,7 +22,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem; /* Aumentado para destaque */
             color: #d5006d;
             text-align: center;
             margin: 40px 0;
@@ -37,6 +37,9 @@
             text-decoration: none;
             color: #ff4081;
             transition: color 0.2s;
+            display: flex; /* Para alinhar a imagem e o texto */
+            align-items: center;
+            justify-content: flex-start; /* Alinhamento à esquerda */
         }
         a:hover {
             color: #d5006d;
@@ -44,7 +47,7 @@
         .container {
             max-width: 800px;
             margin: auto;
-            padding: 20px;  /* Reduzido para melhor visualização em mobile */
+            padding: 20px;  
             background: white;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -58,7 +61,8 @@
             object-fit: cover;
         }
         .link-button {
-            display: block;
+            display: flex; /* Para alinhar imagem e texto */
+            align-items: center;
             margin: 15px 0;
             padding: 15px; 
             background: #f48fb1;
@@ -68,48 +72,68 @@
             text-align: center;
             font-weight: bold;
             transition: background 0.3s;
-            font-size: 1.2rem; /* Aumentado para melhor legibilidade */
+            font-size: 1.2rem; 
+        }
+        .link-button img {
+            width: 40px; /* Aumenta o tamanho da imagem */
+            height: 40px; /* Aumenta o tamanho da imagem */
+            margin-right: 10px;
+            border-radius: 50%; /* Torna a imagem arredondada */
+            object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
         }
         .link-button:hover {
             background: #f50057;
         }
         .footer {
             text-align: center;
-            margin-top: 30px; /* Ajustado para não ficar muito distante */
+            margin-top: 30px; 
             font-size: 0.9rem;
             color: #555;
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 2rem; /* Ajustado para telas pequenas */
+                font-size: 2rem; 
             }
             h2 {
-                font-size: 1.2rem; /* Ajustado para telas pequenas */
+                font-size: 1.2rem; 
             }
             .link-button {
-                font-size: 1rem; /* Ajustado para telas pequenas */
+                font-size: 1rem; 
             }
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Tag viewport adicionada -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="container">
         <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Profile Picture" class="profile-img">
-        <h1>@lojinhadarakyoficial 🎉</h1>
-        <h2>Olá, sou a Raky! 🩷✨</h2>
+        <h1>@LojinhaDaRakyoficial 🎊</h1>
+        <h2>Olá, sou a Raky! 🩷</h2>
         <p>Não perca a oportunidade de conhecer:</p>
         
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button">Meu Perfil no Roblox 🎮</a>
-        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button">WhatsApp Group Invite 💬</a>
-        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button">Rede vizinha LojinhaDaRaky 📸</a>
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1730445318084" class="link-button">Meu Perfil no Roblox 🎮</a>
-        <a href="https://rakyofficialstore.wordpress.com/" class="link-button">Meu Site de valores 💖</a>
+        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button">
+            <img src="roblox.jpg" alt="Roblox Logo"> Meu Perfil no Roblox 🎮
+        </a>
+        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button">
+            <img src="zap.jpg" alt="WhatsApp Logo"> WhatsApp Group Invite 💬
+        </a>
+        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button">
+            <img src="insta.jpg" alt="Instagram Logo"> Rede vizinha LojinhaDaRaky 📸
+        </a>
+        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1730445318084" class="link-button">
+            <img src="serve.jpg" alt="Servidor Roblox Logo"> Meu Servidor no Roblox 🎮
+        </a>
+        <a href="https://rakyofficialstore.wordpress.com/" class="link-button">
+            <img src="site.jpg" alt="Site Logo"> Meu Site de valores 💖
+        </a>
+        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button">
+            <img src="tiktok.jpg" alt="TikTok Logo"> Siga no TikTok 🎵
+        </a>
 
         <div class="footer">
-            <p>🌟 Obrigada por visitar! 🌟</p>
-            <p>Siga nas redes sociais para mais novidades!</p>
+            <p> Obrigada por visitar! </p>
+            <p> ❤️    Siga nas redes sociais para mais novidades!    ❤️ </p>
         </div>
     </div>
 </body>
