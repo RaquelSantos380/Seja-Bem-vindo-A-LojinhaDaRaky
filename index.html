@@ -144,6 +144,14 @@
             <img class="slides" src="2.jpg" alt="Slide 2" style="display: none;">
             <img class="slides" src="3.jpg" alt="Slide 3" style="display: none;">
             <img class="slides" src="4.jpg" alt="Slide 4" style="display: none;">
+            <img class="slides" src="5.jpg" alt="Slide 5" style="display: none;">
+            <img class="slides" src="6.jpg" alt="Slide 6" style="display: none;">
+            <img class="slides" src="7.jpg" alt="Slide 7" style="display: none;">
+            <img class="slides" src="8.jpg" alt="Slide 8" style="display: none;">
+            <img class="slides" src="9.jpg" alt="Slide 9" style="display: none;">
+            <img class="slides" src="10.jpg" alt="Slide 10" style="display: none;">
+            <img class="slides" src="12.jpg" alt="Slide 12" style="display: none;">
+            <img class="slides" src="13.jpg" alt="Slide 13" style="display: none;">
             <span class="seta seta-esquerda" onclick="voltarSlide()" style="position: absolute; top: 50%; transform: translateY(-50%); font-size: 70px; color: #f7c6d9; cursor: pointer; user-select: none; padding: 15px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">&#8249;</span>
             <span class="seta seta-direita" onclick="proximoSlide()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: #f7c6d9; cursor: pointer; user-select: none; padding: 15px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">&#8250;</span>
         </div>
@@ -176,12 +184,12 @@
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % 4;
+            slideIndex = (slideIndex + 1) % 12; // Atualizado para 12 imagens
             mostrarSlide(slideIndex);
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + 4) % 4;
+            slideIndex = (slideIndex - 1 + 12) % 12; // Atualizado para 12 imagens
             mostrarSlide(slideIndex);
         }
 
