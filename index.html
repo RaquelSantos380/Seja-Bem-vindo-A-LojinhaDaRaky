@@ -9,8 +9,8 @@
     <meta property="og:image" content="https://linktr.ee/og/image/lojinhadarakyoficial.jpg"/>
     <meta name="theme-color" content="#ffccff"/>
     <title>lojinhadarakyoficial</title>
-    <link rel="icon" type="image/png" href="Raky.png"> <!-- Preferível usar PNG -->
-    <link rel="icon" type="image/jpeg" href="Raky.jpg"> <!-- JPEG como fallback -->
+    <link rel="icon" type="image/png" href="Raky.png">
+    <link rel="icon" type="image/jpeg" href="Raky.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -34,7 +34,7 @@
             z-index: 1000;
         }
         .container {
-            padding: 100px 20px 20px; /* Ajusta o padding para não sobrepor o header */
+            padding: 100px 20px 20px;
             max-width: 600px;
             margin: auto;
             background: rgba(255, 255, 255, 0.9);
@@ -101,6 +101,41 @@
                 padding: 8px;
             }
         }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 400px; /* Defina a altura desejada para os slides */
+            margin: auto;
+            overflow: hidden;
+            background-color: #fff7f9;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: none; /* Mantenha todos os slides ocultos por padrão */
+            width: 100%; /* Defina a largura para 100% */
+            height: 100%; /* Defina a altura para 100% */
+            object-fit: cover; /* Ajuste a imagem para cobrir o container */
+        }
+        .seta {
+            position: absolute;
+            top: 70%; /* Altere de 50% para 70% ou qualquer valor que você julgar necessário */
+            transform: translateY(-50%);
+            font-size: 70px;
+            color: #f7c6d9;
+            cursor: pointer;
+            user-select: none;
+            padding: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .seta-esquerda {
+            left: 10px; /* Posicione a seta esquerda à esquerda */
+        }
+        .seta-direita {
+            right: 10px; /* Posicione a seta direita à direita */
+        }
     </style>
 </head>
 <body>
@@ -109,47 +144,49 @@
     </div>
 
     <div class="container">
-        <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Profile Picture" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
+        <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
         <h1>Bem-vindo(a)!</h1>
         <h2>Não perca a oportunidade de conhecer:</h2>
 
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button">
-            <img src="roblox.jpg" alt="Roblox Logo"> Meu Perfil no Roblox 🎮
+        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank">
+            <img src="roblox.jpg" alt="Logo do Roblox"> Meu Perfil no Roblox 🎮
         </a>
-        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button">
-            <img src="zap.jpg" alt="WhatsApp Logo"> WhatsApp Group Invite 💬
+        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button" target="_blank">
+            <img src="zap.jpg" alt="Logo do WhatsApp"> WhatsApp Group Invite 💬
         </a>
-        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button">
-            <img src="insta.jpg" alt="Instagram Logo"> Rede vizinha LojinhaDaRaky 📸
+        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button" target="_blank">
+            <img src="insta.jpg" alt="Logo do Instagram"> Rede vizinha LojinhaDaRaky 📸
         </a>
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1730445318084" class="link-button">
-            <img src="serve.jpg" alt="Servidor Roblox Logo"> Meu Servidor no Roblox 🎮
+        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1730445318084" class="link-button" target="_blank">
+            <img src="serve.jpg" alt="Logo do Servidor Roblox"> Meu Servidor no Roblox 🎮
         </a>
-        <a href="https://rakyofficialstore.wordpress.com/" class="link-button">
-            <img src="site.jpg" alt="Site Logo"> Meu Site de valores 💖
+        <a href="https://rakyofficialstore.wordpress.com/" class="link-button" target="_blank">
+            <img src="site.jpg" alt="Logo do Site"> Meu Site de valores 💖
         </a>
-        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button">
-            <img src="tiktok.jpg" alt="TikTok Logo"> Siga no TikTok 🎵
+        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button" target="_blank">
+            <img src="tiktok.jpg" alt="Logo do TikTok"> Siga no TikTok 🎵
         </a>
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
 
-        <div class="slideshow-container" style="position: relative; max-width: 100%; height: 60vh; margin: auto; overflow: hidden; background-color: #fff7f9; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
-            <img class="slides" src="1.jpg" alt="Slide 1" style="display: block; max-height: 100%; max-width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <img class="slides" src="2.jpg" alt="Slide 2" style="display: none;">
-            <img class="slides" src="3.jpg" alt="Slide 3" style="display: none;">
-            <img class="slides" src="4.jpg" alt="Slide 4" style="display: none;">
-            <img class="slides" src="5.jpg" alt="Slide 5" style="display: none;">
-            <img class="slides" src="6.jpg" alt="Slide 6" style="display: none;">
-            <img class="slides" src="7.jpg" alt="Slide 7" style="display: none;">
-            <img class="slides" src="8.jpg" alt="Slide 8" style="display: none;">
-            <img class="slides" src="9.jpg" alt="Slide 9" style="display: none;">
-            <img class="slides" src="10.jpg" alt="Slide 10" style="display: none;">
-            <img class="slides" src="12.jpg" alt="Slide 12" style="display: none;">
-            <img class="slides" src="13.jpg" alt="Slide 13" style="display: none;">
-            <span class="seta seta-esquerda" onclick="voltarSlide()" style="position: absolute; top: 50%; transform: translateY(-50%); font-size: 70px; color: #f7c6d9; cursor: pointer; user-select: none; padding: 15px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">&#8249;</span>
-            <span class="seta seta-direita" onclick="proximoSlide()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font-size: 70px; color: #f7c6d9; cursor: pointer; user-select: none; padding: 15px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">&#8250;</span>
+        <div class="slideshow-container">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/3.jpg" alt="Slide 3">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/4.jpg" alt="Slide 4">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/5.jpg" alt="Slide 5">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/6.jpg" alt="Slide 6">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/7.jpg" alt="Slide 7">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/8.jpg" alt="Slide 8">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/9.jpg" alt="Slide 9">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/10.jpg" alt="Slide 10">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/11.jpg" alt="Slide 11">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/12.jpg" alt="Slide 12">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/13.jpg" alt="Slide 13">
         </div>
+
+        <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
+        <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
 
         <a href="https://rakyofficialstore.wordpress.com/contato/" target="_blank" class="vendedor-botao" style="background-color: #f09bae; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-family: 'Oswald', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
 
@@ -161,7 +198,7 @@
         </div>
     </div>
 
-    <audio id="background-music" loop autoplay volume="0.1">
+    <audio id="background-music" loop autoplay>
         <source src="piano ambiente.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
@@ -179,12 +216,12 @@
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % 12; // Atualizado para 12 imagens
+            slideIndex = (slideIndex + 1) % 13; 
             mostrarSlide(slideIndex);
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + 12) % 12; // Atualizado para 12 imagens
+            slideIndex = (slideIndex - 1 + 13) % 13; 
             mostrarSlide(slideIndex);
         }
 
