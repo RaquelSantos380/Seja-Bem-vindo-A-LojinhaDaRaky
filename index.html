@@ -9,8 +9,8 @@
     <meta property="og:image" content="https://linktr.ee/og/image/lojinhadarakyoficial.jpg"/>
     <meta name="theme-color" content="#ffccff"/>
     <title>lojinhadarakyoficial</title>
-    <link rel="icon" type="image/png" href="Raky.png">
-    <link rel="icon" type="image/jpeg" href="Raky.jpg">
+    <link rel="icon" type="image/png" href="aba.jpg">
+    <link rel="icon" type="image/jpeg" href="aba.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -104,7 +104,7 @@
         .slideshow-container {
             position: relative;
             max-width: 100%;
-            height: 250px; /* Defina a altura desejada para os slides */
+            height: 250px;
             margin: auto;
             overflow: hidden;
             background-color: #fff7f9;
@@ -112,15 +112,15 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .slides {
-            display: none; /* Mantenha todos os slides ocultos por padrão */
-            width: 100%; /* Defina a largura para 100% */
-            height: 100%; /* Ajuste a altura para auto */
-            object-fit: contain; /* Ajuste a imagem para caber dentro do container */
-            margin: auto; /* Centraliza a imagem */
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: auto;
         }
         .seta {
             position: absolute;
-            top: 70%; /* Altere de 70% para 20% para posicionar as setas mais acima */
+            top: 70%;
             transform: translateY(-50%);
             font-size: 50px;
             color: #f7c6d9;
@@ -132,10 +132,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
         .seta-esquerda {
-            left: 10px; /* Posicione a seta esquerda à esquerda */
+            left: 10px;
         }
         .seta-direita {
-            right: 10px; /* Posicione a seta direita à direita */
+            right: 10px;
         }
     </style>
 </head>
@@ -170,7 +170,8 @@
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
 
-        <div class="slideshow-container">
+        <div class="slideshow-container" id="slideshow-container">
+            <!-- Atualizado para permitir até 30 imagens -->
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/3.jpg" alt="Slide 3">
@@ -184,6 +185,9 @@
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/11.jpg" alt="Slide 11">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/12.jpg" alt="Slide 12">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/13.jpg" alt="Slide 13">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/14.jpg" alt="Slide 14">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/15.jpg" alt="Slide 15">
+            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/16.jpg" alt="Slide 16">
         </div>
 
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
@@ -206,10 +210,17 @@
 
     <script>
         let slideIndex = 0;
-        mostrarSlide(slideIndex);
+        const slides = document.getElementsByClassName("slides");
+        const slideshowContainer = document.getElementById("slideshow-container");
+
+        // Verifica se há slides
+        if (slides.length === 0) {
+            slideshowContainer.style.display = "none"; // Oculta o contêiner se não houver slides
+        } else {
+            mostrarSlide(slideIndex);
+        }
 
         function mostrarSlide(index) {
-            let slides = document.getElementsByClassName("slides");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -217,12 +228,12 @@
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % 13; 
+            slideIndex = (slideIndex + 1) % slides.length; // Usa slides.length para evitar erro
             mostrarSlide(slideIndex);
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + 13) % 13; 
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length; // Usa slides.length para evitar erro
             mostrarSlide(slideIndex);
         }
 
