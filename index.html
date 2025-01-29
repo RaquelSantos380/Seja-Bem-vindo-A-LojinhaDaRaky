@@ -15,11 +15,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(to bottom, #fbeff1, #fde7f0);
+            background: linear-gradient(135deg, #fbeff1, #fde7f0, #f5d8e8);
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             color: #083170;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23f7c6d9" /></svg>');
+            opacity: 0.3;
+            z-index: -1;
         }
         .header {
             display: flex;
@@ -32,15 +44,34 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid #f09bae;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .header img:hover {
+            transform: scale(1.1);
+        }
+        .header h1 {
+            font-size: 24px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         .container {
-            padding: 100px 20px 20px;
+            padding: 120px 20px 20px; /* Ajuste para o header fixo */
             max-width: 600px;
             margin: auto;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
         }
         .titulo-botao {
             background-color: #f7c6d9;
@@ -137,11 +168,20 @@
         .seta-direita {
             right: 10px;
         }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="header">
-        <!-- Logo Raky removido -->
+        <h1>Lojinha da Raky</h1>
     </div>
 
     <div class="container">
@@ -208,14 +248,28 @@
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
+        // Efeito de confete ao carregar a página
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+
+        // Configuração do Particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Partículas carregadas!');
+        });
+
+        // Slideshow
         let slideIndex = 0;
         const slides = document.getElementsByClassName("slides");
         const slideshowContainer = document.getElementById("slideshow-container");
 
-        // Verifica se há slides
         if (slides.length === 0) {
-            slideshowContainer.style.display = "none"; // Oculta o contêiner se não houver slides
+            slideshowContainer.style.display = "none";
         } else {
             mostrarSlide(slideIndex);
         }
@@ -228,12 +282,12 @@
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % slides.length; // Usa slides.length para evitar erro
+            slideIndex = (slideIndex + 1) % slides.length;
             mostrarSlide(slideIndex);
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length; // Usa slides.length para evitar erro
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
             mostrarSlide(slideIndex);
         }
 
