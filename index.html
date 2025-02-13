@@ -10,17 +10,17 @@
     <meta name="theme-color" content="#ffccff"/>
     <title>lojinhadarakyoficial</title>
     <link rel="icon" type="image/png" href="aba.jpg">
-    <link rel="icon" type="image/jpeg" href="aba.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(135deg, #fbeff1, #fde7f0, #f5d8e8);
+            background: linear-gradient(135deg, #fce4d6, #f8bbd0, #f48fb1, #f06292);
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             color: #083170;
             position: relative;
+            overflow-x: hidden;
         }
         body::before {
             content: '';
@@ -37,79 +37,72 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 0;
-            background-color: #f7c6d9;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            background-color: #ff66b2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid #f09bae;
-        }
-        .header img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-        .header img:hover {
-            transform: scale(1.1);
+            border-bottom: 3px solid #ff007f;
+            border-radius: 0 0 20px 20px;
         }
         .header h1 {
-            font-size: 24px;
+            font-size: 28px;
             color: white;
-            font-family: 'Dancing Script', cursive;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         .container {
             padding: 120px 20px 20px; /* Ajuste para o header fixo */
             max-width: 600px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(15px);
             position: relative;
             z-index: 1;
         }
         .titulo-botao {
-            background-color: #f7c6d9;
+            background-color: #ff66b2;
             color: white;
             padding: 20px 50px;
-            border: 3px solid #f09bae;
-            border-radius: 25px;
-            font-size: 42px;
-            margin: 70px auto 20px;
+            border: 3px solid #ff007f;
+            border-radius: 30px;
+            font-size: 36px;
+            margin: 60px auto 20px;
             cursor: pointer;
             display: block;
             text-align: center;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .titulo-botao:hover {
-            background-color: #f09bae;
+            background-color: #ff007f;
+            transform: translateY(-2px);
         }
         .link-button {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px 0;
-            padding: 10px;
+            margin: 15px 0;
+            padding: 12px;
             background: #ffb3d9;
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease, background 0.3s ease;
-            font-size: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .link-button img {
             width: 30px;
             height: 30px;
-            margin-right: 5px;
+            margin-right: 8px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -119,62 +112,58 @@
         }
         .footer {
             text-align: center;
-            margin-top: 20px;
-            font-size: 0.8rem;
+            margin-top: 30px;
+            font-size: 0.9rem;
             color: #555;
+            font-weight: bold;
         }
         @media (max-width: 600px) {
             .titulo-botao {
-                font-size: 30px;
+                font-size: 28px;
             }
             .link-button {
-                font-size: 0.9rem;
-                padding: 8px;
+                font-size: 1rem;
+                padding: 10px;
             }
         }
         .slideshow-container {
             position: relative;
             max-width: 100%;
-            height: 250px;
+            height: 300px;
             margin: auto;
             overflow: hidden;
-            background-color: #fff7f9;
+            background-color: #fff;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         .slides {
             display: none;
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            margin: auto;
+            object-fit: cover;
         }
         .seta {
             position: absolute;
             top: 70%;
             transform: translateY(-50%);
             font-size: 50px;
-            color: #f7c6d9;
+            color: #ff66b2;
             cursor: pointer;
             user-select: none;
             padding: 15px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+        .seta:hover {
+            background-color: rgba(255, 255, 255, 0.9);
         }
         .seta-esquerda {
-            left: 10px;
+            left: 15px;
         }
         .seta-direita {
-            right: 10px;
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
+            right: 15px;
         }
     </style>
 </head>
@@ -185,11 +174,9 @@
     </div>
 
     <div class="container">
-        <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
+        <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 120px; height: 120px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
         <h1>Bem-vindo(a)!</h1>
         <h2>Não perca a oportunidade de conhecer:</h2>
-
-        <div class="espaco"></div> <!-- Espaço adicionado aqui -->
 
         <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank">
             <img src="roblox.jpg" alt="Logo do Roblox"> Meu Perfil no Roblox 🎮
@@ -213,7 +200,6 @@
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
 
         <div class="slideshow-container" id="slideshow-container">
-            <!-- Atualizado para permitir até 30 imagens -->
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/3.jpg" alt="Slide 3">
@@ -249,9 +235,9 @@
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
         <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
 
-        <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" style="background-color: #f09bae; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-family: 'Oswald', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
+        <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" style="background-color: #ff007f; color: white; padding: 12px 25px; border: none; border-radius: 30px; font-family: 'Poppins', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
 
-        <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao" style="font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: #f09bae; color: white; border-radius: 25px; text-align: center; margin: 20px auto; display: block; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
+        <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao" style="font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: #ff007f; color: white; border-radius: 30px; text-align: center; margin: 20px auto; display: block; text-decoration: none; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
 
         <div class="footer" id="rodape">
             <p> Obrigada por visitar! </p>
