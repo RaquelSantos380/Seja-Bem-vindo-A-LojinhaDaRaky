@@ -98,12 +98,14 @@
         }
         .link-button img {
             width: 40px; /* Ajuste o tamanho do ícone aqui */
-                height: 40px; /* Ajuste o tamanho do ícone aqui */
-                margin-right: 10px; /* Espaço entre o ícone e o texto */
-                border-radius: 50%; /* Faz o ícone ficar em formato de bolinha */
-                background-color: #fff; /* Cor de fundo para o ícone */
-                padding: 5px; /* Espaçamento interno */
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o ícone */
+            height: auto; /* Mantenha a proporção da imagem */
+            max-height: 40px; /* Limite a altura máxima para 40px */
+            margin-right: 10px; /* Espaço entre o ícone e o texto */
+            border-radius: 50%; /* Faz o ícone ficar em formato de bolinha */
+            background-color: #fff; /* Cor de fundo para o ícone */
+            padding: 5px; /* Espaçamento interno */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o ícone */
+            object-fit: contain; /* Mantém a proporção da imagem */
         }
         .link-button:hover {
             background: #ff99cc;
@@ -190,6 +192,9 @@
         </a>
         <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button" target="_blank">
             <img src="tiktok.jpg" alt="Logo do TikTok"> Siga no TikTok 🎵
+        </a>
+        <a href="https://raquelsantos380.github.io/Confiavel-ou-Scammer-/" class="link-button" target="_blank">
+            <img src="hacker.jpg" alt="Logo do hacker"> Lista de Scammers 👨‍💻🔍
         </a>
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
