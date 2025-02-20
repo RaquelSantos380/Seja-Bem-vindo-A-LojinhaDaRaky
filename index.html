@@ -82,30 +82,34 @@
         }
         .link-button {
             display: flex;
+            flex-direction: row;
             align-items: center;
-            justify-content: center;
-            margin: 10px 0;
+            justify-content: flex-start;
+            margin: 15px auto;
             padding: 12px;
             background: #ffb3d9;
             color: #fff;
             border: none;
+            text-align: center;
             border-radius: 8px;
+            text-align: left;
             text-align: center;
             font-weight: bold;
             transition: transform 0.2s ease, background 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 95%;
         }
         .link-button img {
             width: 40px; /* Ajuste o tamanho do ícone aqui */
             height: auto; /* Mantenha a proporção da imagem */
-            max-height: 40px; /* Limite a altura máxima para 40px */
-            margin-right: 10px; /* Espaço entre o ícone e o texto */
+            max-height: 20px; /* Limite a altura máxima para 40px */
+            object-fit: contain; /* Mantém a proporção da imagem */
             border-radius: 50%; /* Faz o ícone ficar em formato de bolinha */
             background-color: #fff; /* Cor de fundo para o ícone */
             padding: 5px; /* Espaçamento interno */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o ícone */
-            object-fit: contain; /* Mantém a proporção da imagem */
+            margin-right: 20px;
         }
         .link-button:hover {
             background: #ff99cc;
