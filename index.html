@@ -102,14 +102,14 @@
             line-height: 1.5;
         }
         .link-button img {
-            width: 50px; /* Ajuste o tamanho do ícone aqui */
-            height: auto; /* Mantenha a proporção da imagem */
-            max-height: 50px; /* Limite a altura máxima para 40px */
-            border-radius: 40%; /* Faz o ícone ficar em formato de bolinha */
-            background-color: #fff; /* Cor de fundo para o ícone */
-            padding: 3px; /* Espaçamento interno */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para o ícone */
-            margin-right: 20px;
+            width: 40px; /* Tamanho reduzido do ícone */
+            height: auto;
+            max-height: 40px;
+            border-radius: 40%;
+            background-color: #fff;
+            padding: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-right: 15px;
         }
         .link-button:hover {
             background: #ff99cc;
@@ -168,6 +168,24 @@
         .seta-direita {
             right: 10px;
         }
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            display: none;
+        }
+        .loading-text {
+            font-size: 24px;
+            color: #ff66b2;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -180,25 +198,25 @@
         <h1>Bem-vindo(a)!</h1>
         <h2>Não perca a oportunidade de conhecer:</h2>
 
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank">
+        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank" onclick="showLoading()">
             <img src="roblox.jpg" alt="Logo do Roblox"> Meu Perfil no Roblox 🎮
         </a>
-        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button" target="_blank">
+        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button" target="_blank" onclick="showLoading()">
             <img src="zap.jpg" alt="Logo do WhatsApp"> WhatsApp Group Invite 💬
         </a>
-        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button" target="_blank">
+        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button" target="_blank" onclick="showLoading()">
             <img src="insta.jpg" alt="Logo do Instagram"> Rede vizinha LojinhaDaRaky 📸
         </a>
-        <a href="https://raquelsantos380.github.io/Pagamento/" class="link-button" target="_blank">
+        <a href="https://raquelsantos380.github.io/Pagamento/" class="link-button" target="_blank" onclick="showLoading()">
             <img src="din.jpg" alt="Logo do dinheiro"> Realizar o Pagamento 💵 
         </a>
-        <a href="https://rakyofficialstore.wordpress.com/como-receber/" class="link-button" target="_blank">
+        <a href="https://rakyofficialstore.wordpress.com/como-receber/" class="link-button" target="_blank" onclick="showLoading()">
             <img src="site.jpg" alt="Logo do Site"> Faça sua encomenda! 💖
         </a>
-        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button" target="_blank">
+        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button" target="_blank" onclick="showLoading()">
             <img src="tiktok.jpg" alt="Logo do TikTok"> Siga no TikTok 🎵
         </a>
-        <a href="https://raquelsantos380.github.io/Confiavel-ou-Scammer-/" class="link-button" target="_blank">
+        <a href="https://raquelsantos380.github.io/Confiavel-ou-Scammer-/" class="link-button" target="_blank" onclick="showLoading()">
             <img src="hacker.jpg" alt="Logo do hacker"> Lista de Scammers 👨‍💻🔍
         </a>
 
@@ -243,7 +261,6 @@
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/36.jpg" alt="Slide 36">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/37.jpg" alt="Slide 37">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/38.jpg" alt="Slide 38">
-
         </div>
 
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
@@ -257,6 +274,10 @@
             <p> Obrigada por visitar! </p>
             <p> ❤️ Siga nas redes sociais para mais novidades! ❤️ </p>
         </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-text">Direcionando você à página...</div>
     </div>
 
     <audio id="background-music" loop autoplay>
@@ -309,6 +330,15 @@
 
         function scrollToRodape() {
             document.getElementById("rodape").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Função para mostrar o overlay de carregamento
+        function showLoading() {
+            const overlay = document.getElementById("loading-overlay");
+            overlay.style.display = "flex";
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 2000); // Tempo de exibição do overlay (2 segundos)
         }
     </script>
 </body>
