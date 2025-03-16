@@ -80,36 +80,37 @@
         .titulo-botao:hover {
             background-color: #f09bae;
         }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
         .link-button {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            margin: 15px auto;
-            padding: 15px 20px;
+            justify-content: center;
+            padding: 15px;
             background: #ffb3d9;
             color: #fff;
             border: none;
-            text-align: center;
-            border-radius:12px;
-            text-align: left;
+            border-radius: 12px;
             text-align: center;
             font-weight: bold;
             transition: transform 0.2s ease, background 0.3s ease;
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 95%;
-            line-height: 1.5;
+            text-decoration: none;
         }
         .link-button img {
-            width: 40px; /* Tamanho reduzido do ícone */
-            height: auto;
-            max-height: 40px;
-            border-radius: 40%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             background-color: #fff;
             padding: 3px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-right: 15px;
+            margin-bottom: 10px;
         }
         .link-button:hover {
             background: #ff99cc;
@@ -128,7 +129,7 @@
                 font-size: 30px;
             }
             .link-button {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 padding: 10px;
             }
         }
@@ -194,34 +195,33 @@
     </div>
 
     <div class="container">
-        <img src="https://ugc.production.linktr.ee/a4a81e04-420f-496b-9864-e6d7ed1aa226_Picsart-24-07-17-13-42-46-224.jpeg?io=true&size=avatar-v3_0" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
+        <img src="raky.jpg" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
         <h1>Bem-vindo(a)!</h1>
-        <h2>Não perca a oportunidade de conhecer:</h2>
+        <h2>Pesquise:</h2>
 
-        <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="roblox.jpg" alt="Logo do Roblox"> Meu Perfil no Roblox 🎮
-        </a>
-        <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="zap.jpg" alt="Logo do WhatsApp"> WhatsApp Group Invite 💬
-        </a>
-        <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="insta.jpg" alt="Logo do Instagram"> Rede vizinha LojinhaDaRaky 📸
-        </a>
-        <a href="https://raquelsantos380.github.io/Pagamento/" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="din.jpg" alt="Logo do dinheiro"> Realizar o Pagamento 💵 
-        </a>
-        <a href="https://rakyofficialstore.wordpress.com/como-receber/" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="site.jpg" alt="Logo do Site"> Faça sua encomenda! 💖
-        </a>
-        <a href="https://www.tiktok.com/@lojinhadarakyoficial" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="tiktok.jpg" alt="Logo do TikTok"> Siga no TikTok 🎵
-        </a>
-        <a href="https://raquelsantos380.github.io/Confiavel-ou-Scammer-/" class="link-button" target="_blank" onclick="showLoading()">
-            <img src="hacker.jpg" alt="Logo do hacker"> Lista de Scammers 👨‍💻🔍
-        </a>
+        <div class="link-grid">
+            <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="roblox.jpg" alt="Logo do Roblox"> Meu Perfil no Roblox 🎮
+            </a>
+            <a href="https://raquelsantos380.github.io/Confiavel-ou-Scammer-/" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="hacker.jpg" alt="Logo do hacker"> Lista de Scammers 👨‍💻🔍
+            </a>
+            <a href="https://chat.whatsapp.com/HUP7X9224ygDGf9uP5RFJ4" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="zap.jpg" alt="Logo do WhatsApp"> WhatsApp Group Invite 💬
+            </a>
+            <a href="https://www.instagram.com/LojinhaDaRaky" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="insta.jpg" alt="Logo do Instagram"> Rede vizinha LojinhaDaRaky 📸
+            </a>
+            <a href="https://raquelsantos380.github.io/Pagamento/" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="din.jpg" alt="Logo do dinheiro"> Realizar o Pagamento 💵 
+            </a>
+            <a href="https://rakyofficialstore.wordpress.com/como-receber/" class="link-button" target="_blank" onclick="showLoading()">
+                <img src="site.jpg" alt="Logo do Site"> Faça sua encomenda! 💖
+            </a>
+        </div>
+
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
-
         <div class="slideshow-container" id="slideshow-container">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
@@ -269,7 +269,6 @@
         <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" style="background-color: #f09bae; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-family: 'Oswald', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
 
         <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao" style="font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: #f09bae; color: white; border-radius: 25px; text-align: center; margin: 20px auto; display: block; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
-
         <div class="footer" id="rodape">
             <p> Obrigada por visitar! </p>
             <p> ❤️ Siga nas redes sociais para mais novidades! ❤️ </p>
