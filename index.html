@@ -189,11 +189,11 @@
         /* Estilo do balão de mensagem */
         .raky-message-container {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 10px;
+            right: 10px;
             display: flex;
             align-items: flex-end;
-            gap: 10px;
+            gap: 5px;
             z-index: 1000; /* Garante que fique acima de outros elementos */
         }
 
@@ -202,7 +202,7 @@
             color: white;
             padding: 10px 15px;
             border-radius: 15px;
-            max-width: 200px;
+            max-width: 150px;
             position: relative;
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -221,9 +221,9 @@
         }
 
         .raky-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border-radius: 40%;
             object-fit: cover;
         }
 
@@ -416,7 +416,7 @@
                 rakyMessage.textContent = messages[currentMessageIndex];
 
                 // Animação de entrada
-                rakyMessage.style.animation = 'fadeIn 0.5s ease-in-out';
+                rakyMessage.style.animation = 'fadeIn 0.3s ease-in-out';
 
                 // Espera 5 segundos antes de trocar para a próxima mensagem
                 setTimeout(() => {
