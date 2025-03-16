@@ -186,6 +186,57 @@
             color: #ff66b2;
             font-weight: bold;
         }
+        /* Estilo do balão de mensagem */
+        .raky-message-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+        }
+
+        .raky-message {
+            background-color: #f09bae;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 200px;
+            position: relative;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .raky-message::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #f09bae;
+            border-bottom: 0;
+            margin-bottom: -10px;
+        }
+
+        .raky-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Animação para aparecer e desaparecer */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(20px); }
+        }
     </style>
 </head>
 <body>
@@ -276,6 +327,13 @@
         </div>
     </div>
 
+    <!-- Balão de mensagem e imagem da Raky -->
+    <div class="raky-message-container">
+        <div id="rakyMessage" class="raky-message">Seja bem-vindo ao site da Raky!</div>
+        <img src="raky.jpg" alt="Raky" class="raky-image">
+    </div>
+
+
     <div class="loading-overlay" id="loading-overlay">
         <div class="loading-text">Direcionando você à página...</div>
     </div>
@@ -340,6 +398,45 @@
                 overlay.style.display = "none";
             }, 2000); // Tempo de exibição do overlay (2 segundos)
         }
+        // Lista de mensagens da Raky
+        const messages = [
+            "Seja bem-vindo ao site da Raky!",
+            "Aqui você encontra várias opções para te ajudar em suas compras e vendas na minha lojinha.",
+            "Da até para você vender pra gente, encontrar lojas confiáveis, ou scammers, e ver o estoque da Raky, tudo aqui!"
+        ];
+
+        // Referências aos elementos
+        const rakyMessage = document.getElementById('rakyMessage');
+
+        // Função para exibir as mensagens em sequência
+        let currentMessageIndex = 0;
+        function showNextMessage() {
+            if (currentMessageIndex < messages.length) {
+                // Atualiza o texto da mensagem
+                rakyMessage.textContent = messages[currentMessageIndex];
+
+                // Animação de entrada
+                rakyMessage.style.animation = 'fadeIn 0.5s ease-in-out';
+
+                // Espera 5 segundos antes de trocar para a próxima mensagem
+                setTimeout(() => {
+                    // Animação de saída
+                    rakyMessage.style.animation = 'fadeOut 0.5s ease-in-out';
+
+                    // Troca para a próxima mensagem após a animação de saída
+                    setTimeout(() => {
+                        currentMessageIndex++;
+                        showNextMessage();
+                    }, 500); // Tempo da animação de saída
+                }, 5000); // Tempo que a mensagem fica visível
+            } else {
+                // Oculta o balão após a última mensagem
+                rakyMessage.style.display = 'none';
+            }
+        }
+
+        // Inicia a sequência de mensagens
+        showNextMessage();
     </script>
 </body>
 </html>
