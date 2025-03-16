@@ -200,11 +200,11 @@
         .raky-message {
             background-color: #f09bae;
             color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
-            max-width: 100px;
+            padding: 2px 5px;
+            border-radius: 5px;
+            max-width: 50px;
             position: relative;
-            animation: fadeIn 0.5s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         .raky-message::after {
@@ -221,9 +221,9 @@
         }
 
         .raky-image {
-            width: 30px;
-            height: 30px;
-            border-radius: 20%;
+            width: 10px;
+            height: 10px;
+            border-radius: 10%;
             object-fit: cover;
         }
 
@@ -416,12 +416,12 @@
                 rakyMessage.textContent = messages[currentMessageIndex];
 
                 // Animação de entrada
-                rakyMessage.style.animation = 'fadeIn 0.3s ease-in-out';
+                rakyMessage.style.animation = 'fadeIn 0.2s ease-in-out';
 
                 // Espera 5 segundos antes de trocar para a próxima mensagem
                 setTimeout(() => {
                     // Animação de saída
-                    rakyMessage.style.animation = 'fadeOut 0.3s ease-in-out';
+                    rakyMessage.style.animation = 'fadeOut 0.2s ease-in-out';
 
                     // Troca para a próxima mensagem após a animação de saída
                     setTimeout(() => {
