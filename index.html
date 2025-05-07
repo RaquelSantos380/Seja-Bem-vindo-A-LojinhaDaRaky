@@ -233,11 +233,10 @@
             </a>
         </div>
 
-
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
         <div class="slideshow-container" id="slideshow-container">
-            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
-            <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
+            <!-- AQUI VOCÊ DEVE ADICIONAR AS IMAGENS DOS SLIDES -->
+src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/3.jpg" alt="Slide 3">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/4.jpg" alt="Slide 4">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/5.jpg" alt="Slide 5">
@@ -275,6 +274,7 @@
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/37.jpg" alt="Slide 37">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/38.jpg" alt="Slide 38">
         </div>
+
 
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
         <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
@@ -321,27 +321,33 @@
         const slides = document.getElementsByClassName("slides");
         const slideshowContainer = document.getElementById("slideshow-container");
 
-        if (slides.length === 0) {
-            slideshowContainer.style.display = "none";
-        } else {
-            mostrarSlide(slideIndex);
+        function iniciarSlideshow() {
+            if (slides.length > 0) {
+                mostrarSlide(slideIndex);
+            }
         }
 
         function mostrarSlide(index) {
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slides[index].style.display = "block";
+            if (slides.length > 0) {
+                slides[index].style.display = "block";
+            }
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % slides.length;
-            mostrarSlide(slideIndex);
+            if (slides.length > 0) {
+                slideIndex = (slideIndex + 1) % slides.length;
+                mostrarSlide(slideIndex);
+            }
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-            mostrarSlide(slideIndex);
+            if (slides.length > 0) {
+                slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+                mostrarSlide(slideIndex);
+            }
         }
 
         function scrollToRodape() {
@@ -356,6 +362,9 @@
                 overlay.style.display = "none";
             }, 2000); // Tempo de exibição do overlay (2 segundos)
         }
+
+        // Inicia o slideshow quando a página carrega
+        window.onload = iniciarSlideshow;
     </script>
 </body>
 </html>
