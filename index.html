@@ -150,22 +150,18 @@
             object-fit: contain;
             margin: auto;
         }
-        .active-slide {
-            display: block;
-        }
         .seta {
             position: absolute;
             top: 69%;
             transform: translateY(-50%);
-            font-size: 30px;
+            font-size: 50px;
             color: #ff66b2;
             cursor: pointer;
             user-select: none;
-            padding: 10px;
+            padding: 15px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 10;
         }
         .seta-esquerda {
             left: 10px;
@@ -204,22 +200,6 @@
         .ver-mais a:hover {
             text-decoration: underline;
         }
-        .slide-indicators {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .indicator {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        .indicator.active {
-            background-color: #ff66b2;
-        }
     </style>
 </head>
 <body>
@@ -252,6 +232,7 @@
                 <img src="site.jpg" alt="Logo do Site"> Faça sua encomenda! 💖
             </a>
         </div>
+
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
         <div class="slideshow-container" id="slideshow-container">
@@ -298,8 +279,6 @@
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
         <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
 
-        <div class="slide-indicators" id="slide-indicators"></div>
-
         <div class="ver-mais">
             <a href="https://raquelsantos380.github.io/Inventario-Atualizado/" target="_blank" onclick="showLoading()">Clique aqui para ver o inventário completo</a>
         </div>
@@ -326,77 +305,57 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         // Efeito de confete ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
 
-            // Configuração do Particles.js
-            particlesJS.load('particles-js', 'particles.json', function() {
-                console.log('Partículas carregadas!');
-            });
-
-            // Inicializar slideshow após o carregamento da página
-            initSlideshow();
+        // Configuração do Particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Partículas carregadas!');
         });
 
         // Slideshow
         let slideIndex = 0;
-        let slides = [];
-        let slideInterval;
+        const slides = document.getElementsByClassName("slides");
+        const slideshowContainer = document.getElementById("slideshow-container");
 
-        function initSlideshow() {
-            slides = document.getElementsByClassName("slides");
-            const indicatorsContainer = document.getElementById("slide-indicators");
-            
-            // Criar indicadores
-            indicatorsContainer.innerHTML = '';
-            for (let i = 0; i < slides.length; i++) {
-                const indicator = document.createElement("span");
-                indicator.className = "indicator";
-                indicator.onclick = function() { currentSlide(i); };
-                indicatorsContainer.appendChild(indicator);
-            }
-            
-            if (slides.length > 0) {
-                mostrarSlide(slideIndex);
-                // Iniciar slideshow automático
-                slideInterval = setInterval(proximoSlide, 3000);
-            } else {
-                document.getElementById("slideshow-container").style.display = "none";
-            }
+        if (slides.length === 0) {
+            slideshowContainer.style.display = "none";
+        } else {
+            mostrarSlide(slideIndex);
         }
 
         function mostrarSlide(index) {
-            // Verificar se há slides
-            if (slides.length === 0) return;
-            
-            // Esconder todos os slides
             for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active-slide");
+                slides[i].style.display = "none";
             }
-            
-            // Atualizar índice se necessário
-            if (index >= slides.length) { slideIndex = 0; }
-            if (index < 0) { slideIndex = slides.length - 1; }
-            
-            // Mostrar slide atual
-            slides[slideIndex].classList.add("active-slide");
-            
-            // Atualizar indicadores
-            const indicators = document.getElementsByClassName("indicator");
-            for (let i = 0; i < indicators.length; i++) {
-                indicators[i].classList.remove("active");
-            }
-            if (indicators.length > 0) {
-                indicators[slideIndex].classList.add("active");
-            }
-            
-            // Reiniciar temporizador
-            clearInterval(slideInterval);
-            slideInterval = setInterval(proximoSlide, 30000);
+            slides[index].style.display = "block";
         }
 
-   
+        function proximoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            mostrarSlide(slideIndex);
+        }
+
+        function voltarSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            mostrarSlide(slideIndex);
+        }
+
+        function scrollToRodape() {
+            document.getElementById("rodape").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Função para mostrar o overlay de carregamento
+        function showLoading() {
+            const overlay = document.getElementById("loading-overlay");
+            overlay.style.display = "flex";
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 2000); // Tempo de exibição do overlay (2 segundos)
+        }
+    </script>
+</body>
+</html>
