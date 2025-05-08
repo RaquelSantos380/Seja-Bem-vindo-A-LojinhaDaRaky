@@ -399,33 +399,4 @@
             slideInterval = setInterval(proximoSlide, 30000);
         }
 
-        function proximoSlide() {
-            slideIndex = (slideIndex + 1) % slides.length;
-            mostrarSlide(slideIndex);
-        }
-
-        function voltarSlide() {
-            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-            mostrarSlide(slideIndex);
-        }
-
-        function currentSlide(index) {
-            slideIndex = index;
-            mostrarSlide(slideIndex);
-        }
-
-        function scrollToRodape() {
-            document.getElementById("rodape").scrollIntoView({ behavior: "smooth" });
-        }
-
-        // Função para mostrar o overlay de carregamento
-        function showLoading() {
-            const overlay = document.getElementById("loading-overlay");
-            overlay.style.display = "flex";
-            setTimeout(() => {
-                overlay.style.display = "none";
-            }, 2000); // Tempo de exibição do overlay (2 segundos)
-        }
-    </script>
-</body>
-</html>
+   
