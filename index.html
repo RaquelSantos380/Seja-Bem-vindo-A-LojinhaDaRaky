@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#ffccff" />
     <title>Lojinha da Raky</title>
     <link rel="icon" type="image/png" href="Raky.jpg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -200,6 +200,19 @@
         .ver-mais a:hover {
             text-decoration: underline;
         }
+        .valor-botao {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            background-color: #f09bae;
+            color: white;
+            border-radius: 25px;
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -232,7 +245,6 @@
                 <img src="site.jpg" alt="Logo do Site"> Faça sua encomenda! 💖
             </a>
         </div>
-
 
         <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
         <div class="slideshow-container" id="slideshow-container">
@@ -285,7 +297,7 @@
 
         <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" style="background-color: #f09bae; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-family: 'Oswald', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
 
-        <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao" style="font-size: 20px; font-weight: bold; padding: 15px 30px; background-color: #f09bae; color: white; border-radius: 25px; text-align: center; margin: 20px auto; display: block; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
+        <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
         <div class="footer" id="rodape">
             <p> Obrigada por visitar! </p>
             <p> ❤️ Siga nas redes sociais para mais novidades! ❤️ </p>
@@ -296,24 +308,28 @@
         <div class="loading-text">Direcionando você à página...</div>
     </div>
 
-    <audio id="background-music" loop autoplay>
+    <audio id="background-music" loop>
         <source src="piano ambiente.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
     </audio>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         // Efeito de confete ao carregar a página
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
-
-        // Configuração do Particles.js
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('Partículas carregadas!');
+        document.addEventListener('DOMContentLoaded', function() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            
+            // Inicia a música após interação do usuário
+            document.addEventListener('click', function() {
+                const music = document.getElementById('background-music');
+                if (music.paused) {
+                    music.play().catch(e => console.log('Autoplay bloqueado:', e));
+                }
+            }, { once: true });
         });
 
         // Slideshow
@@ -325,6 +341,9 @@
             slideshowContainer.style.display = "none";
         } else {
             mostrarSlide(slideIndex);
+            
+            // Auto avançar slides
+            setInterval(proximoSlide, 30000);
         }
 
         function mostrarSlide(index) {
