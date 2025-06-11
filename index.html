@@ -75,10 +75,11 @@
             text-align: center;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .titulo-botao:hover {
             background-color: #f09bae;
+            transform: scale(1.02);
         }
         .link-grid {
             display: grid;
@@ -92,16 +93,17 @@
             align-items: center;
             justify-content: center;
             padding: 15px;
-            background: #ffb3d9;
+            background: linear-gradient(145deg, #ffb3d9, #ff99cc);
             color: #fff;
             border: none;
             border-radius: 12px;
             text-align: center;
             font-weight: bold;
-            transition: transform 0.2s ease, background 0.3s ease;
+            transition: all 0.3s ease;
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             text-decoration: none;
+            min-height: 90px;
         }
         .link-button img {
             width: 40px;
@@ -113,9 +115,9 @@
             margin-bottom: 10px;
         }
         .link-button:hover {
-            background: #ff99cc;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, #ff99cc, #ff80b3);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
         .footer {
             text-align: center;
@@ -127,10 +129,15 @@
         @media (max-width: 600px) {
             .titulo-botao {
                 font-size: 30px;
+                padding: 15px 30px;
             }
             .link-button {
                 font-size: 0.9rem;
                 padding: 10px;
+                min-height: 80px;
+            }
+            .link-grid {
+                grid-template-columns: 1fr;
             }
         }
         .slideshow-container {
@@ -162,6 +169,11 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        .seta:hover {
+            transform: translateY(-50%) scale(1.1);
+            background-color: rgba(255, 255, 255, 0.9);
         }
         .seta-esquerda {
             left: 10px;
@@ -196,15 +208,17 @@
             color: #ff66b2;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.2s ease;
         }
         .ver-mais a:hover {
             text-decoration: underline;
+            color: #ff3f81;
         }
         .valor-botao {
             font-size: 20px;
             font-weight: bold;
             padding: 15px 30px;
-            background-color: #f09bae;
+            background: linear-gradient(145deg, #f09bae, #e87b94);
             color: white;
             border-radius: 25px;
             text-align: center;
@@ -212,6 +226,79 @@
             display: block;
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .valor-botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .profile-img {
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            border: 5px solid #FFD700;
+            transition: all 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .nick-info {
+            background: linear-gradient(145deg, #ffccff, #ff99cc);
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 15px auto;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            border: 2px dashed #ff3f81;
+            max-width: 80%;
+        }
+        .nick-info span {
+            color: #ff0066;
+            font-size: 1.1em;
+        }
+        .vendedor-pets {
+            background: linear-gradient(145deg, #ff6b6b, #ff3f81);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .vendedor-pets:hover {
+            background: linear-gradient(145deg, #ff3f81, #ff0066);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 0, 102, 0.4);
+        }
+        .welcome-text {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .welcome-text h1 {
+            color: #ff3f81;
+            margin-bottom: 5px;
+        }
+        .welcome-text h2 {
+            color: #ff66b2;
+            margin-top: 0;
+            font-size: 1.3em;
         }
     </style>
 </head>
@@ -221,9 +308,16 @@
     </div>
 
     <div class="container">
-        <img src="Raky.jpg" alt="Foto de Perfil" class="profile-img" style="display: block; margin: 0 auto 10px; border-radius: 50%; width: 100px; height: 100px; object-fit: cover; box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); border: 5px solid #FFD700;">
-        <h1>Bem-vindo(a)!</h1>
-        <h2>Pesquise:</h2>
+        <img src="Raky.jpg" alt="Foto de Perfil" class="profile-img">
+        
+        <div class="welcome-text">
+            <h1>Bem-vindo(a)!</h1>
+            <h2>Pesquise:</h2>
+        </div>
+
+        <div class="nick-info">
+            Entre pelo join usando o nick: <span>RaquelSantos380_2</span>
+        </div>
 
         <div class="link-grid">
             <a href="https://www.roblox.com/share?code=e8dc1efe571de3429656004569edf40a&type=Profile&source=ProfileShare&stamp=1720113365229" class="link-button" target="_blank" onclick="showLoading()">
@@ -295,7 +389,9 @@
             <a href="https://raquelsantos380.github.io/Inventario-Atualizado/" target="_blank" onclick="showLoading()">Clique aqui para ver o inventário completo</a>
         </div>
 
-        <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" style="background-color: #f09bae; color: white; padding: 12px 25px; border: none; border-radius: 25px; font-family: 'Oswald', sans-serif; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin: 20px auto; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">Você é vendedor de pets? Clique aqui compramos o seu</a>
+        <a href="https://raquelsantos380.github.io/Venda-seus-Pets-do-Adopt-me/" class="vendedor-pets" target="_blank" onclick="showLoading()">
+            VOCÊ É VENDEDOR DE PETS? CLIQUE AQUI COMPRAMOS O SEU
+        </a>
 
         <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
         <div class="footer" id="rodape">
