@@ -136,10 +136,10 @@
         }
         .link-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin: 20px 0;
-            max-width: 600px; /* Limita a largura máxima */
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -148,7 +148,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 12px 5px; /* Padding horizontal menor */
+            padding: 12px 5px;
             background: linear-gradient(145deg, #ffb3d9, #ff99cc);
             color: #fff;
             border: none;
@@ -156,11 +156,10 @@
             text-align: center;
             font-weight: bold;
             transition: all 0.3s ease;
-            font-size: 0.85rem; /* Fonte um pouco menor */
+            font-size: 0.85rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
             text-decoration: none;
-            min-height: 90px; /* Altura reduzida */
-            border: 2px solid white;
+            min-height: 90px;
         }
         .link-button img {
             width: 45px;
@@ -177,50 +176,52 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
         .vendedor-pets {
-            background: linear-gradient(145deg, #ff6b6b, #ff3f81);
+            background: linear-gradient(145deg, #ffb3d9, #ff99cc);
             color: white;
             padding: 18px 30px;
             border: none;
             border-radius: 30px;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.1em;
             cursor: pointer;
             text-decoration: none;
             display: block;
             margin: 25px auto;
             text-align: center;
-            box-shadow: 0 7px 20px rgba(255, 0, 102, 0.4);
+            box-shadow: 0 7px 20px rgba(255, 105, 180, 0.4);
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid white;
+            letter-spacing: 0.5px;
             max-width: 90%;
         }
         .vendedor-pets:hover {
-            background: linear-gradient(145deg, #ff3f81, #ff0066);
+            background: linear-gradient(145deg, #ff99cc, #ff80b3);
             transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 12px 25px rgba(255, 0, 102, 0.5);
+            box-shadow: 0 12px 25px rgba(255, 105, 180, 0.5);
         }
         .valor-botao {
-            font-size: 22px;
-            font-weight: bold;
-            padding: 18px 35px;
-            background: linear-gradient(145deg, #f09bae, #e87b94);
+            background: linear-gradient(145deg, #ffb3d9, #ff99cc);
             color: white;
+            padding: 18px 30px;
+            border: none;
             border-radius: 30px;
-            text-align: center;
-            margin: 25px auto;
-            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 25px auto;
+            text-align: center;
+            box-shadow: 0 7px 20px rgba(255, 105, 180, 0.4);
             transition: all 0.3s ease;
-            border: 2px solid white;
+            letter-spacing: 0.5px;
             max-width: 90%;
         }
         .valor-botao:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, #ff99cc, #ff80b3);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(255, 105, 180, 0.5);
         }
         .loading-overlay {
             position: fixed;
@@ -261,7 +262,6 @@
             background: rgba(255,255,255,0.9);
         }
 
-        /* Ajustes para mobile */
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 22px;
@@ -290,7 +290,7 @@
                 height: 40px;
             }
             .vendedor-pets {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 padding: 15px 20px;
                 margin: 20px auto;
             }
@@ -395,6 +395,7 @@
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/38.jpg" alt="Slide 38">
         </div>
 
+
         <div class="ver-mais">
             <a href="https://raquelsantos380.github.io/Inventario-Atualizado/" target="_blank" onclick="showLoading()">Clique aqui para ver o inventário completo</a>
         </div>
@@ -416,7 +417,6 @@
     </div>
 
     <script>
-        // Função para mostrar o overlay de carregamento
         function showLoading() {
             const overlay = document.getElementById("loading-overlay");
             if(overlay) {
