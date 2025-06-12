@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="lojinhadarakyoficial" />
-    <meta property="og:description" content="Olá, sou a Raky! Não perca a oportunidade de conhecer:" />
+    <meta property="og:title" content="Inventário Da Raky" />
+    <meta property="og:description" content="Confira nosso inventário completo de pets no Adopt Me!" />
     <meta property="og:url" content="https://www.seusite.com" />
     <meta property="og:image" content="Raky.jpg">
     <meta name="theme-color" content="#ffccff" />
-    <title>Lojinha da Raky</title>
+    <title>Inventário Da Raky</title>
     <link rel="icon" type="image/png" href="Raky.jpg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&family=Oswald:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -62,24 +62,97 @@
             position: relative;
             z-index: 1;
         }
-        .titulo-botao {
-            background-color: #f7c6d9;
-            color: white;
-            padding: 20px 50px;
-            border: 3px solid #ff3f81;
-            border-radius: 25px;
-            font-size: 48px;
-            margin: 70px auto 20px;
-            cursor: pointer;
+        .profile-img {
             display: block;
-            text-align: center;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            border: 5px solid #FFD700;
             transition: all 0.3s ease;
         }
-        .titulo-botao:hover {
-            background-color: #f09bae;
-            transform: scale(1.02);
+        .profile-img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .nick-info {
+            background: linear-gradient(145deg, #ffccff, #ff99cc);
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 15px auto;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            border: 2px dashed #ff3f81;
+            max-width: 80%;
+        }
+        .nick-info span {
+            color: #ff0066;
+            font-size: 1.1em;
+        }
+        .welcome-text {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .welcome-text h1 {
+            color: #ff3f81;
+            margin-bottom: 5px;
+        }
+        .welcome-text h2 {
+            color: #ff66b2;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 250px;
+            margin: 20px auto;
+            overflow: hidden;
+            background-color: #fff7f9;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: auto;
+        }
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #ff66b2;
+            cursor: pointer;
+            user-select: none;
+            padding: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        .seta:hover {
+            transform: translateY(-50%) scale(1.1);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .seta-esquerda {
+            left: 10px;
+        }
+        .seta-direita {
+            right: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: bold;
         }
         .link-grid {
             display: grid;
@@ -119,67 +192,47 @@
             transform: translateY(-5px) scale(1.03);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #555;
+        .vendedor-pets {
+            background: linear-gradient(145deg, #ff6b6b, #ff3f81);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Oswald', sans-serif;
             font-weight: bold;
-        }
-        @media (max-width: 600px) {
-            .titulo-botao {
-                font-size: 30px;
-                padding: 15px 30px;
-            }
-            .link-button {
-                font-size: 0.9rem;
-                padding: 10px;
-                min-height: 80px;
-            }
-            .link-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            height: 250px;
-            margin: auto;
-            overflow: hidden;
-            background-color: #fff7f9;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .slides {
-            display: none;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            margin: auto;
-        }
-        .seta {
-            position: absolute;
-            top: 69%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: #ff66b2;
+            font-size: 1.1em;
             cursor: pointer;
-            user-select: none;
-            padding: 15px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.2s ease;
+            text-decoration: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .seta:hover {
-            transform: translateY(-50%) scale(1.1);
-            background-color: rgba(255, 255, 255, 0.9);
+        .vendedor-pets:hover {
+            background: linear-gradient(145deg, #ff3f81, #ff0066);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(255, 0, 102, 0.4);
         }
-        .seta-esquerda {
-            left: 10px;
+        .valor-botao {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            background: linear-gradient(145deg, #f09bae, #e87b94);
+            color: white;
+            border-radius: 25px;
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
-        .seta-direita {
-            right: 10px;
+        .valor-botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
         .loading-overlay {
             position: fixed;
@@ -214,105 +267,42 @@
             text-decoration: underline;
             color: #ff3f81;
         }
-        .valor-botao {
-            font-size: 20px;
-            font-weight: bold;
-            padding: 15px 30px;
-            background: linear-gradient(145deg, #f09bae, #e87b94);
-            color: white;
-            border-radius: 25px;
-            text-align: center;
-            margin: 20px auto;
-            display: block;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        .valor-botao:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        .profile-img {
-            display: block;
-            margin: 0 auto 10px;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-            border: 5px solid #FFD700;
-            transition: all 0.3s ease;
-        }
-        .profile-img:hover {
-            transform: rotate(10deg) scale(1.1);
-        }
-        .nick-info {
-            background: linear-gradient(145deg, #ffccff, #ff99cc);
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin: 15px auto;
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            border: 2px dashed #ff3f81;
-            max-width: 80%;
-        }
-        .nick-info span {
-            color: #ff0066;
-            font-size: 1.1em;
-        }
-        .vendedor-pets {
-            background: linear-gradient(145deg, #ff6b6b, #ff3f81);
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 25px;
-            font-family: 'Oswald', sans-serif;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            margin: 20px auto;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(255, 0, 102, 0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .vendedor-pets:hover {
-            background: linear-gradient(145deg, #ff3f81, #ff0066);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(255, 0, 102, 0.4);
-        }
-        .welcome-text {
-            text-align: center;
-            margin: 15px 0;
-            font-size: 1.1em;
-            color: #333;
-        }
-        .welcome-text h1 {
-            color: #ff3f81;
-            margin-bottom: 5px;
-        }
-        .welcome-text h2 {
-            color: #ff66b2;
-            margin-top: 0;
-            font-size: 1.3em;
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            .slideshow-container {
+                height: 200px;
+            }
+            .seta {
+                font-size: 40px;
+                padding: 10px;
+            }
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+            .link-button {
+                min-height: 80px;
+                font-size: 0.9rem;
+            }
+            .valor-botao {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Lojinha da Raky</h1>
+        <h1>Inventário Da Raky</h1>
     </div>
 
     <div class="container">
         <img src="Raky.jpg" alt="Foto de Perfil" class="profile-img">
         
         <div class="welcome-text">
-            <h1>Bem-vindo(a)!</h1>
-            <h2>Pesquise:</h2>
+            <h1>Bem-vindo ao Inventário!</h1>
+            <h2>Confira nossos pets disponíveis</h2>
         </div>
 
         <div class="nick-info">
@@ -340,7 +330,6 @@
             </a>
         </div>
 
-        <div class="titulo-botao" onclick="scrollToRodape()">Estoque</div>
         <div class="slideshow-container" id="slideshow-container">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/1.jpg" alt="Slide 1">
             <img class="slides" src="https://raw.githubusercontent.com/RaquelSantos380/Seja-Bem-vindo-A-LojinhaDaRaky/main/minhas%20imagens/2.jpg" alt="Slide 2">
@@ -394,9 +383,10 @@
         </a>
 
         <a href="https://raquelsantos380.github.io/Pesquisa-de-valores-do-Adopt-me/" target="_blank" class="valor-botao">🔍 Clique aqui para saber o valor de cada pet 🔍</a>
+        
         <div class="footer" id="rodape">
-            <p> Obrigada por visitar! </p>
-            <p> ❤️ Siga nas redes sociais para mais novidades! ❤️ </p>
+            <p>Obrigada por visitar nosso inventário!</p>
+            <p>❤️ Siga nas redes sociais para mais novidades! ❤️</p>
         </div>
     </div>
 
@@ -404,72 +394,44 @@
         <div class="loading-text">Direcionando você à página...</div>
     </div>
 
-    <audio id="background-music" loop>
-        <source src="piano ambiente.mp3" type="audio/mp3">
-        Seu navegador não suporta o elemento de áudio.
-    </audio>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
-        // Efeito de confete ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-            
-            // Inicia a música após interação do usuário
-            document.addEventListener('click', function() {
-                const music = document.getElementById('background-music');
-                if (music.paused) {
-                    music.play().catch(e => console.log('Autoplay bloqueado:', e));
-                }
-            }, { once: true });
-        });
-
-        // Slideshow
+        // Slideshow automático
         let slideIndex = 0;
         const slides = document.getElementsByClassName("slides");
-        const slideshowContainer = document.getElementById("slideshow-container");
-
-        if (slides.length === 0) {
-            slideshowContainer.style.display = "none";
-        } else {
-            mostrarSlide(slideIndex);
-            
-            // Auto avançar slides
-            setInterval(proximoSlide, 30000);
-        }
-
+        
         function mostrarSlide(index) {
+            // Esconde todos os slides
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+            
+            // Mostra o slide atual
             slides[index].style.display = "block";
         }
-
+        
         function proximoSlide() {
             slideIndex = (slideIndex + 1) % slides.length;
             mostrarSlide(slideIndex);
         }
-
+        
         function voltarSlide() {
             slideIndex = (slideIndex - 1 + slides.length) % slides.length;
             mostrarSlide(slideIndex);
         }
-
-        function scrollToRodape() {
-            document.getElementById("rodape").scrollIntoView({ behavior: "smooth" });
-        }
-
+        
+        // Inicia o slideshow
+        mostrarSlide(slideIndex);
+        
+        // Configura o intervalo para trocar os slides a cada 3 segundos
+        setInterval(proximoSlide, 3000);
+        
         // Função para mostrar o overlay de carregamento
         function showLoading() {
             const overlay = document.getElementById("loading-overlay");
             overlay.style.display = "flex";
             setTimeout(() => {
                 overlay.style.display = "none";
-            }, 2000); // Tempo de exibição do overlay (2 segundos)
+            }, 2000);
         }
     </script>
 </body>
